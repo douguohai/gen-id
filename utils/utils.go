@@ -53,3 +53,21 @@ func ReverseString(s string) string {
 	}
 	return string(runes)
 }
+
+// PaddingZeroForNumberStart 数字填充0 666=>000666
+func PaddingZeroForNumberStart(length int, num string) string {
+	inputLen := len(num)
+	if inputLen == length {
+		return num
+	}
+	if inputLen < length {
+		//前缀补充0
+		for i := 0; i < length-inputLen; i++ {
+			num = "0" + num
+		}
+		return num
+	} else {
+		//裁剪多余位数
+		return num[0:length]
+	}
+}

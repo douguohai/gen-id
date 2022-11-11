@@ -1,13 +1,11 @@
 package generator
 
-import "testing"
+import (
+	"fmt"
+	"github.com/douguohai/gen-id/utils"
+	"testing"
+)
 
-func TestNewGeneratorData(t *testing.T) {
-	t.Log(NewGeneratorData(nil))
-}
-
-func BenchmarkNewGeneratorData(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		b.Log(NewGeneratorData(nil))
-	}
+func TestXPaddingZeroForNumberStart(t *testing.T) {
+	fmt.Println(utils.PaddingZeroForNumberStart(6, "010000000"))
 }
