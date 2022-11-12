@@ -2,6 +2,7 @@ package utils
 
 import (
 	"bytes"
+	gonanoid "github.com/matoous/go-nanoid/v2"
 	"math/rand"
 	"time"
 )
@@ -70,4 +71,10 @@ func PaddingZeroForNumberStart(length int, num string) string {
 		//裁剪多余位数
 		return num[0:length]
 	}
+}
+
+//GeneratorNanoId 获取指定长度NanoId
+func GeneratorNanoId(alphabet string, size int) string {
+	id, _ := gonanoid.Generate(alphabet, size)
+	return id
 }
