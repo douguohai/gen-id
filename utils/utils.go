@@ -74,9 +74,8 @@ func PaddingZeroForNumberStart(length int, num string) string {
 }
 
 //GeneratorNanoId 获取指定长度NanoId
-//alphabet 根字符串
 //size 指定生成字符串大小
-func GeneratorNanoId(alphabet string, size int) string {
-	id, _ := gonanoid.Generate(alphabet, size)
+func GeneratorNanoId(size int) string {
+	id, _ := gonanoid.New(size)
 	return id
 }
